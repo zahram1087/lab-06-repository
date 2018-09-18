@@ -1,8 +1,9 @@
 `use strict`;
+const express = require('express');
 
 const app = express();
 
-const express = require('express');
+
 
 const superagent = require('superagent');
 
@@ -16,11 +17,11 @@ require('dotenv').config();
 
 const PORT = 3000;
 app.get('/location', (request, response) => {
+  // console.log(request.query); //should give seattle or request input
 
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${request.query.data}&key=${process.env.GOOGLE_API_KEY}`;
 
-
-  return superagent.get(ur)
+  return superagent.get(url)
 
     .then(result => {
       const locationResult = {
@@ -31,6 +32,7 @@ app.get('/location', (request, response) => {
 
       }
       response.send(locationResult);
+     
     })
 
 })

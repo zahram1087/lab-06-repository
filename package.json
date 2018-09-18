@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/zahram1087/lab-06-repository#readme",
   "dependencies": {
+    "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "superagent": "^4.0.0-beta.5"
