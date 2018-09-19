@@ -1,17 +1,13 @@
 `use strict`;
+
 const express = require('express');
 
 const app = express();
 
-
-
 const superagent = require('superagent');
-
 const cors = require('cors');
 
 app.use(cors());
-
-
 
 require('dotenv').config();
 
@@ -30,10 +26,8 @@ app.get('/location', (request, response) => {
         formatted_query: result.body.results[0].formatted_address,
         latitude: result.body.results[0].geometry.location.lat,
         longitude: result.body.results[0].geometry.location.lng
-
       }
       response.send(locationResult);
-     
     })
 
 })
