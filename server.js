@@ -14,7 +14,6 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 
 app.get('/location', (request, response) => {
-  // console.log(request.query); //should give seattle or request input
 
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${request.query.data}&key=${process.env.GOOGLE_API_KEY}`;
 
